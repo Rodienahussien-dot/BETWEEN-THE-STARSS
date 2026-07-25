@@ -1,0 +1,392 @@
+border-radius: 50%;
+
+    background: white;
+
+    box-shadow:
+
+        100px 50px white,
+
+        200px 100px white,
+
+        300px 20px white,
+
+        400px 140px white,
+
+        500px 70px white,
+
+        600px 180px white,
+
+        700px 30px white,
+
+        800px 120px white,
+
+        900px 60px white,
+
+        1000px 200px white,
+
+        1100px 90px white;
+
+    animation: starsFall 12s ease-in-out infinite;
+
+}
+
+
+/* البحر */
+
+.sea {
+
+    position: absolute;
+
+    bottom: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 35vh;
+
+    overflow: hidden;
+
+    background:
+
+        linear-gradient(
+
+            to bottom,
+
+            #171527,
+
+            #080b14
+
+        );
+
+}
+
+
+/* أمواج البحر */
+
+.sea::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 15px;
+
+    left: -10%;
+
+    width: 120%;
+
+    height: 100px;
+
+    border-top: 1px solid rgba(210, 200, 220, 0.25);
+
+    border-radius: 50%;
+
+    animation: waves 8s ease-in-out infinite alternate;
+
+}
+
+.sea::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 55px;
+
+    left: -10%;
+
+    width: 120%;
+
+    height: 100px;
+
+    border-top: 1px solid rgba(210, 200, 220, 0.12);
+
+    border-radius: 50%;
+
+    animation: waves 10s ease-in-out infinite alternate-reverse;
+
+}
+
+
+/* انعكاس القمر */
+
+.moon-reflection {
+
+    position: absolute;
+
+    top: 0;
+
+    left: 50%;
+
+    width: 100px;
+
+    height: 100%;
+
+    opacity: 0;
+
+    transform: translateX(-50%);
+
+    background:
+
+        linear-gradient(
+
+            to bottom,
+
+            rgba(255, 245, 215, 0.3),
+
+            transparent 70%
+
+        );
+
+    filter: blur(12px);
+
+    animation: reflectionAppear 20s ease forwards;
+
+}
+
+
+/* الرسالة الأخيرة */
+
+.final-message {
+
+    position: absolute;
+
+    z-index: 10;
+
+    top: 82%;
+
+    left: 50%;
+
+    width: 90%;
+
+    text-align: center;
+
+    color: #eee8e1;
+
+    opacity: 0;
+
+    transform: translate(-50%, -40%);
+
+    animation: finalAppear 5s ease 22s forwards;
+
+}
+
+.final-message p {
+
+    margin-bottom: 15px;
+
+    font-size: 20px;
+
+    letter-spacing: 1px;
+
+}
+
+.final-message span {
+
+    color: #cfc4d2;
+
+    font-size: 16px;
+
+}
+
+
+/* سقوط النجوم */
+
+@keyframes starsFall {
+
+    0% {
+
+        opacity: 0;
+
+        transform: translateY(-100px);
+
+    }
+
+    20% {
+
+        opacity: 1;
+
+    }
+
+    70% {
+
+        opacity: 1;
+
+    }
+
+    100% {
+
+        opacity: 0.2;
+
+        transform: translateY(550px);
+
+    }
+
+}
+
+
+/* ظهور القمر */
+
+@keyframes moonAppear {
+
+    0% {
+
+        opacity: 0;
+
+        transform: translate(-50%, -50%) scale(0.2);
+
+    }
+
+    60% {
+
+        opacity: 0.6;
+
+        transform: translate(-50%, -50%) scale(0.8);
+
+    }
+
+    100% {
+
+        opacity: 1;
+
+        transform: translate(-50%, -50%) scale(1);
+
+    }
+
+}
+
+
+/* توهج القمر */
+
+@keyframes moonGlow {
+
+    from {
+
+        box-shadow:
+
+            0 0 25px rgba(255, 245, 220, 0.4),
+
+            0 0 70px rgba(255, 245, 220, 0.2);
+
+    }
+
+    to {
+
+        box-shadow:
+
+            0 0 40px rgba(255, 245, 220, 0.6),
+
+            0 0 110px rgba(255, 245, 220, 0.3);
+
+    }
+
+}
+
+
+/* ظهور انعكاس القمر */
+
+@keyframes reflectionAppear {
+
+    0% {
+
+        opacity: 0;
+
+    }
+
+    70% {
+
+        opacity: 0;
+
+    }
+
+    100% {
+
+        opacity: 0.7;
+
+    }
+
+}
+
+
+/* حركة البحر */
+
+@keyframes waves {
+
+    from {
+
+        transform: translateX(-20px);
+
+    }
+
+    to {
+
+        transform: translateX(20px);
+
+    }
+
+}
+
+
+/* ظهور الرسالة */
+
+@keyframes finalAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform: translate(-50%, -40%);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translate(-50%, -50%);
+
+    }
+
+}
+
+
+/* الموبايل والآيباد */
+
+@media (max-width: 600px) {
+
+    h1 {
+
+        font-size: 24px;
+
+    }
+
+    .small-text {
+
+        font-size: 10px;
+
+        letter-spacing: 3px;
+
+    }
+
+    .moon {
+
+        width: 110px;
+
+        height: 110px;
+
+    }
+
+    .final-message p {
+
+        font-size: 17px;
+
+    }
+
+    .final-message span {
+
+        font-size: 14px;
+
+    }
+
+}
