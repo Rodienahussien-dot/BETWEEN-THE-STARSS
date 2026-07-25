@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Between the Stars</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="first-page">
+
+    <main class="welcome-container">
+
+        <p class="small-text">BETWEEN THE STARS</p>
+
+        <h1>
+            في مكان ما بين الهدوء والنجوم،
+            <br>
+            هناك شيء صغير ينتظرك.
+        </h1>
+
+        <a href="page2.html" class="main-button">
+            Continue ✦
+        </a>
+
+    </main>
+
+</body>
+</html>
