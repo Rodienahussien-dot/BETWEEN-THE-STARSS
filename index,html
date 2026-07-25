@@ -1,29 +1,113 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Between the Stars</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Between the Stars</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 50% 20%, #33263d 0%, #171520 45%, #08090d 100%);
+    color: #f5eee6;
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image:
+        radial-gradient(circle, white 1px, transparent 1px),
+        radial-gradient(circle, white 1px, transparent 1px);
+    background-size: 130px 150px, 210px 190px;
+    background-position: 20px 30px, 80px 100px;
+    opacity: .35;
+    animation: stars 6s ease-in-out infinite alternate;
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 25px;
+}
+
+.label {
+    color: #c9b9ca;
+    font-size: 11px;
+    letter-spacing: 5px;
+    margin-bottom: 35px;
+}
+
+h1 {
+    font-size: 28px;
+    font-weight: normal;
+    line-height: 2;
+    margin: 0 0 50px;
+}
+
+.button {
+    color: #f5eee6;
+    text-decoration: none;
+    border: 1px solid rgba(255,255,255,.35);
+    border-radius: 40px;
+    padding: 15px 35px;
+    background: rgba(255,255,255,.05);
+    transition: .4s;
+}
+
+.button:hover {
+    background: rgba(255,255,255,.14);
+    transform: translateY(-3px);
+}
+
+@keyframes stars {
+    from { opacity: .25; }
+    to { opacity: .65; }
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 23px;
+    }
+}
+</style>
 </head>
 
-<body class="first-page">
+<body>
 
-    <main class="welcome-container">
+<div class="content">
 
-        <p class="small-text">BETWEEN THE STARS</p>
+    <div class="label">BETWEEN THE STARS</div>
 
-        <h1>
-            في مكان ما بين الهدوء والنجوم،
-            <br>
-            هناك شيء صغير ينتظرك.
-        </h1>
+    <h1>
+        في مكان ما بين الهدوء والنجوم،
+        <br>
+        هناك شيء صغير ينتظرك.
+    </h1>
 
-        <a href="page2.html" class="main-button">
-            Continue ✦
-        </a>
+    <a href="page2.html" class="button">
+        Continue ✦
+    </a>
 
-    </main>
+</div>
 
 </body>
 </html>
